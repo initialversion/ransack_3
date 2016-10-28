@@ -10,7 +10,8 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.page(params[:page])
+    @q = Photo.ransack(params[:q])
+    @photos = @q.result(:distinct => true).includes(:user).page(params[:page]).per(params[:per_page])
   end
 
   def show

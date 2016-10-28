@@ -1,3 +1,21 @@
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+    <div class="form-group">
+    <%= f.label :caption_cont, "Caption containing" %>
+    <%= f.text_field :caption_cont, :class => "form-control", :placeholder => "Caption containing" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "Email containing" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "Email containing" %>
+  </div>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+
+<a href="/photos" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
 <div class="page-header">
   <h1>
     Photos

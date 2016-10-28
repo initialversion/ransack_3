@@ -1,3 +1,21 @@
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+    <div class="form-group">
+    <%= f.label :comment_description_cont, "Comment description containing" %>
+    <%= f.text_field :comment_description_cont, :class => "form-control", :placeholder => "Comment description containing" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :commenter_email_cont, "Email containing" %>
+    <%= f.text_field :commenter_email_cont, :class => "form-control", :placeholder => "Email containing" %>
+  </div>
+
+<%= f.submit :class => "btn btn-primary btn-block" %>
+
+<a href="/comments" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
 <div class="page-header">
   <h1>
     Comments
